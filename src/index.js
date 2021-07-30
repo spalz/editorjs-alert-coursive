@@ -31,7 +31,7 @@ import ToolboxIcon from '../assets/icon.svg';
  * @property {string} defaultType - default Alert type
  * @property {string} messagePlaceholder - placeholder to show in Alert`s message input
  */
-export default class Alert {
+export default class AlertCursive {
   /**
    * Get Toolbox settings
    *
@@ -41,7 +41,7 @@ export default class Alert {
   static get toolbox() {
     return {
       icon: ToolboxIcon,
-      title: 'Alert',
+      title: 'AlertCursive',
     };
   }
 
@@ -81,16 +81,7 @@ export default class Alert {
    * @returns {array}
    */
   static get ALERT_TYPES() {
-    return [
-      'primary',
-      'secondary',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'light',
-      'dark',
-    ];
+    return ['info', 'danger', 'warning', 'success'];
   }
 
   /**
@@ -131,10 +122,10 @@ export default class Alert {
     };
 
     this.container = undefined;
-    
+
     this.readOnly = readOnly;
   }
-  
+
   /**
    * Returns true to notify the core that read-only mode is supported
    *
