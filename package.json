@@ -1,5 +1,5 @@
 {
-  "name": "editorjs-alert",
+  "name": "editorjs-alert-coursive",
   "version": "1.0.3",
   "description": "Editor.js tool for adding colorful alerts",
   "main": "./dist/bundle.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vishaltelangre/editorjs-alert.git"
+    "url": "git+https://github.com/vishaltelangre/editorjs-alert-coursive.git"
   },
   "keywords": [
     "editorjs",
@@ -36,9 +36,9 @@
   "author": "Vishal Telangre",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vishaltelangre/editorjs-alert/issues"
+    "url": "https://github.com/vishaltelangre/editorjs-alert-coursive/issues"
   },
-  "homepage": "https://github.com/vishaltelangre/editorjs-alert",
+  "homepage": "https://github.com/vishaltelangre/editorjs-alert-coursive",
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
