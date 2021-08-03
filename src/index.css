@@ -1,4 +1,4 @@
-.cdx-alert {
+.cdx-alert-coursive {
   position: relative;
   padding: 10px;
   border-radius: 8px;
@@ -10,7 +10,7 @@
   outline: none;
 }
 
-.cdx-alert [contentEditable='true'][data-placeholder]::before {
+.cdx-alert-coursive [contentEditable='true'][data-placeholder]::before {
   position: absolute;
   content: attr(data-placeholder);
   color: #b9b9b9;
@@ -18,43 +18,44 @@
   opacity: 0;
 }
 
-.cdx-alert [contentEditable='true'][data-placeholder]:empty::before {
+.cdx-alert-coursive [contentEditable='true'][data-placeholder]:empty::before {
   opacity: 1;
 }
 
-.cdx-alert [contentEditable='true'][data-placeholder]:empty:focus::before {
+.cdx-alert-coursive
+  [contentEditable='true'][data-placeholder]:empty:focus::before {
   opacity: 0;
 }
 
-.cdx-alert-info {
+.cdx-alert-coursive-info {
   background-color: #eff0f1;
 }
 
-.cdx-alert-danger {
+.cdx-alert-coursive-danger {
   background-color: #ecd7e3;
 }
 
-.cdx-alert-warning {
+.cdx-alert-coursive-warning {
   background-color: #f5eedc;
 }
 
-.cdx-alert-success {
+.cdx-alert-coursive-success {
   background-color: #ebf3da;
 }
 
-.cdx-alert.cdx-settings-button {
+.cdx-alert-coursive.cdx-settings-button {
   margin: 3px;
   width: 28px;
   height: 28px;
   opacity: 0.5;
 }
 
-.cdx-alert.cdx-settings-button:hover {
+.cdx-alert-coursive.cdx-settings-button:hover {
   opacity: 1;
 }
 
-.cdx-alert.cdx-settings-button--active,
-.cdx-alert.ce-settings__button--focused {
+.cdx-alert-coursive.cdx-settings-button--active,
+.cdx-alert-coursive.ce-settings__button--focused {
   font-weight: bold;
   opacity: 0.9;
 }

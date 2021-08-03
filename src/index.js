@@ -1,5 +1,5 @@
 /**
- * Alert block for the Editor.js.
+ * AlertCursive block for the Editor.js.
  *
  * @author Vishal Telangre
  * @license MIT
@@ -16,20 +16,20 @@ require('./index.css').toString();
 import ToolboxIcon from '../assets/icon.svg';
 
 /**
- * @class Alert
- * @classdesc Alert Tool for Editor.js
- * @property {AlertData} data - Alert Tool`s input and output data
+ * @class AlertCursive
+ * @classdesc AlertCursive Tool for Editor.js
+ * @property {AlertCursiveData} data - AlertCursive Tool`s input and output data
  * @property {object} api - Editor.js API instance
  *
- * @typedef {object} AlertData
- * @description Alert Tool`s input and output data
- * @property {string} type - Alert type
- * @property {string} message - Alert message
+ * @typedef {object} AlertCursiveData
+ * @description AlertCursive Tool`s input and output data
+ * @property {string} type - AlertCursive type
+ * @property {string} message - AlertCursive message
  *
- * @typedef {object} AlertConfig
- * @description Alert Tool`s initial configuration
- * @property {string} defaultType - default Alert type
- * @property {string} messagePlaceholder - placeholder to show in Alert`s message input
+ * @typedef {object} AlertCursiveConfig
+ * @description AlertCursive Tool`s initial configuration
+ * @property {string} defaultType - default AlertCursive type
+ * @property {string} messagePlaceholder - placeholder to show in AlertCursive`s message input
  */
 export default class AlertCursive {
   /**
@@ -46,7 +46,7 @@ export default class AlertCursive {
   }
 
   /**
-   * Allow to press Enter inside the Alert block
+   * Allow to press Enter inside the AlertCursive block
    * @public
    * @returns {boolean}
    */
@@ -55,7 +55,7 @@ export default class AlertCursive {
   }
 
   /**
-   * Default Alert type
+   * Default AlertCursive type
    *
    * @public
    * @returns {string}
@@ -65,7 +65,7 @@ export default class AlertCursive {
   }
 
   /**
-   * Default placeholder for Alert message
+   * Default placeholder for AlertCursive message
    *
    * @public
    * @returns {string}
@@ -75,7 +75,7 @@ export default class AlertCursive {
   }
 
   /**
-   * Supported Alert types
+   * Supported AlertCursive types
    *
    * @public
    * @returns {array}
@@ -85,7 +85,7 @@ export default class AlertCursive {
   }
 
   /**
-   * Alert Tool`s styles
+   * AlertCursive Tool`s styles
    *
    * @returns {Object}
    */
@@ -93,8 +93,8 @@ export default class AlertCursive {
     return {
       settingsButton: this.api.styles.settingsButton,
       settingsButtonActive: this.api.styles.settingsButtonActive,
-      wrapper: 'cdx-alert',
-      wrapperForType: (type) => `cdx-alert-${type}`,
+      wrapper: 'cdx-alert-coursive',
+      wrapperForType: (type) => `cdx-alert-coursive-${type}`,
       message: 'cdx-alert__message',
     };
   }
@@ -102,20 +102,20 @@ export default class AlertCursive {
   /**
    * Render plugin`s main Element and fill it with saved data
    *
-   * @param {AlertData} data — previously saved data
-   * @param {AlertConfig} config — user config for Tool
+   * @param {AlertCursiveData} data — previously saved data
+   * @param {AlertCursiveConfig} config — user config for Tool
    * @param {Object} api - Editor.js API
    * @param {boolean} readOnly - read only mode flag
    */
   constructor({ data, config, api, readOnly }) {
     this.api = api;
 
-    this.defaultType = config.defaultType || Alert.DEFAULT_TYPE;
+    this.defaultType = config.defaultType || AlertCursive.DEFAULT_TYPE;
     this.messagePlaceholder =
-      config.messagePlaceholder || Alert.DEFAULT_MESSAGE_PLACEHOLDER;
+      config.messagePlaceholder || AlertCursive.DEFAULT_MESSAGE_PLACEHOLDER;
 
     this.data = {
-      type: Alert.ALERT_TYPES.includes(data.type)
+      type: AlertCursive.ALERT_TYPES.includes(data.type)
         ? data.type
         : this.defaultType,
       message: data.message || '',
@@ -136,7 +136,7 @@ export default class AlertCursive {
   }
 
   /**
-   * Create Alert Tool container
+   * Create AlertCursive Tool container
    *
    * @returns {Element}
    */
@@ -168,7 +168,7 @@ export default class AlertCursive {
   renderSettings() {
     const settingsContainer = this._make('div');
 
-    Alert.ALERT_TYPES.forEach((type) => {
+    AlertCursive.ALERT_TYPES.forEach((type) => {
       const settingsButton = this._make(
         'div',
         [
@@ -188,7 +188,7 @@ export default class AlertCursive {
 
       // Set up click handler
       settingsButton.addEventListener('click', () => {
-        this._changeAlertType(type);
+        this._changeAlertCursiveType(type);
 
         // Un-highlight previous type button
         settingsContainer
@@ -208,33 +208,33 @@ export default class AlertCursive {
   }
 
   /**
-   * Helper for changing style of Alert block with the selected Alert type
+   * Helper for changing style of AlertCursive block with the selected AlertCursive type
    *
-   * @param {string} newType - new Alert type to be applied to the block
+   * @param {string} newType - new AlertCursive type to be applied to the block
    * @private
    */
-  _changeAlertType(newType) {
+  _changeAlertCursiveType(newType) {
     // Save new type
     this.data.type = newType;
 
-    Alert.ALERT_TYPES.forEach((type) => {
+    AlertCursive.ALERT_TYPES.forEach((type) => {
       const alertClass = this.CSS.wrapperForType(type);
 
-      // Remove the old Alert type class
+      // Remove the old AlertCursive type class
       this.container.classList.remove(alertClass);
 
       if (newType === type) {
-        // Add an Alert class for the selected Alert type
+        // Add an AlertCursive class for the selected AlertCursive type
         this.container.classList.add(alertClass);
       }
     });
   }
 
   /**
-   * Extract Alert data from Alert Tool element
+   * Extract AlertCursive data from AlertCursive Tool element
    *
    * @param {HTMLDivElement} alertElement - element to save
-   * @returns {AlertData}
+   * @returns {AlertCursiveData}
    */
   save(alertElement) {
     const messageEl = alertElement.querySelector(`.${this.CSS.message}`);
@@ -268,7 +268,7 @@ export default class AlertCursive {
   }
 
   /**
-   * Fill Alert's message with the pasted content
+   * Fill AlertCursive's message with the pasted content
    *
    * @param {PasteEvent} event - event with pasted content
    */
@@ -282,13 +282,13 @@ export default class AlertCursive {
   }
 
   /**
-   * Allow Alert to be converted to/from other blocks
+   * Allow AlertCursive to be converted to/from other blocks
    */
   static get conversionConfig() {
     return {
-      // export Alert's message for other blocks
+      // export AlertCursive's message for other blocks
       export: (data) => data.message,
-      // fill Alert's message from other block's export string
+      // fill AlertCursive's message from other block's export string
       import: (string) => {
         return {
           message: string,
@@ -299,7 +299,7 @@ export default class AlertCursive {
   }
 
   /**
-   * Sanitizer config for Alert Tool saved data
+   * Sanitizer config for AlertCursive Tool saved data
    * @returns {Object}
    */
   static get sanitize() {

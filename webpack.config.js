@@ -31,7 +31,7 @@ module.exports = (env, argv) => {
       path: __dirname + '/dist',
       publicPath: '/',
       filename: mode === 'production' ? 'bundle.js' : `${mode}.bundle.js`,
-      library: 'Alert',
+      library: 'AlertCursive',
       libraryTarget: 'umd',
       libraryExport: 'default',
     },
