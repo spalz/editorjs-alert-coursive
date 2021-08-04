@@ -41,7 +41,7 @@ export default class AlertCursive {
   static get toolbox() {
     return {
       icon: ToolboxIcon,
-      title: 'AlertCursive',
+      title: 'Нотификация',
     };
   }
 
@@ -71,7 +71,7 @@ export default class AlertCursive {
    * @returns {string}
    */
   static get DEFAULT_MESSAGE_PLACEHOLDER() {
-    return 'Type here...';
+    return 'Текст нотификации';
   }
 
   /**
